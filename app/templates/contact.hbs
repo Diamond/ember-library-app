@@ -1,0 +1,21 @@
+<h1>Contact Us</h1>
+
+{{#if model.response}}
+  <div class="alert alert-success">
+    {{model.response}}
+  </div>
+{{/if}}
+
+<div class="well">
+  <div class="form-group">
+    <label>Email Address</label>
+    {{input type="text" class="form-control" placeholder="name@domain.com" value=model.email}}
+  </div>
+
+  <div class="form-group">
+    <label>Message</label>
+    {{textarea class="form-control" placeholder="Send your message here" value=model.message}}
+  </div>
+
+  <input type="button" class="btn btn-primary" disabled={{model.isInvalid}} {{action 'submit' model}} value='Submit' />
+</div>
